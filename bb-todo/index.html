@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+	<div id = "container"></div>
+	<script type="text/babel">
+
+        var ToDo = React.createClass({
+            handleSubmit:function(event){
+              console.log("here")
+                event.preventDefault();
+                console.log("form was submitted");
+                    
+            },
+            handleChange:function(event){
+                
+                    var text = event.target.value;
+                    console.log(text);
+                    
+            },
+            render:function(){
+                return(
+                    <div>
+                      <p> TODO </p>
+                      <form >
+                        <input onChange = {this.handleChange}/>  
+                        <button onClick = {this.handleSubmit}>Submit</button>
+                      </form>
+                    </div>
+                );
+                
+            }
+        });
+
+        ReactDOM.render(<ToDo />, document.getElementById('container'));
+       
+	</script>
+
+</body>
+</html>
